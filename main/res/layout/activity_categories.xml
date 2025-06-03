@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#1B4332">
+
+        <!-- Header with Logo and Menu -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <!-- Logo placeholder -->
+            <FrameLayout
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/logo">
+            </FrameLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <!-- Refresh Button -->
+            <Button
+                android:id="@+id/refresh_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Refresh"
+                android:textColor="@android:color/white"
+                android:backgroundTint="#2D5A3D"
+                android:layout_marginStart="8dp" />
+
+        </LinearLayout>
+
+        <!-- Categories Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="CATEGORIES"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <!-- Period Selection Spinner -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Period: "
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:layout_marginEnd="8dp" />
+
+            <Spinner
+                android:id="@+id/period_spinner"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/white"
+                android:minHeight="48dp"
+                android:padding="12dp" />
+
+        </LinearLayout>
+
+        <!-- Charts Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="24dp"
+            android:background="#2D5A3D"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/monthly_graph_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Spending: R0"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"
+                android:gravity="center" />
+
+            <!-- Bar Chart -->
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/bar_chart"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Line Chart for Trends -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Spending Trends"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/line_chart"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+        </LinearLayout>
+
+        <!-- Legend for Colors -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginEnd="12dp">
+                <View
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:background="#4CAF50"
+                    android:layout_marginEnd="4dp"
+                    android:layout_gravity="center_vertical" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Groceries"
+                    android:textColor="@android:color/white"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginEnd="12dp">
+                <View
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:background="#2196F3"
+                    android:layout_marginEnd="4dp"
+                    android:layout_gravity="center_vertical" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Car"
+                    android:textColor="@android:color/white"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginEnd="12dp">
+                <View
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:background="#9C27B0"
+                    android:layout_marginEnd="4dp"
+                    android:layout_gravity="center_vertical" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Clothing"
+                    android:textColor="@android:color/white"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <View
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:background="#FF9800"
+                    android:layout_marginEnd="4dp"
+                    android:layout_gravity="center_vertical" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Utilities"
+                    android:textColor="@android:color/white"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Category Circles Grid -->
+        <GridLayout
+            android:id="@+id/categories_grid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:columnCount="2"
+            android:rowCount="3">
+
+            <!-- TOILETRIES -->
+            <FrameLayout
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/circle_background">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="TOILETRIES"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+            </FrameLayout>
+
+            <!-- CAR -->
+            <FrameLayout
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/circle_background">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="CAR"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+            </FrameLayout>
+
+            <!-- WATER & LIGHTS -->
+            <FrameLayout
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/circle_background">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="WATER\n&amp;\nLIGHTS"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+            </FrameLayout>
+
+            <!-- GROCERIES -->
+            <FrameLayout
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/circle_background">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="GROCERIES"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+            </FrameLayout>
+
+            <!-- CLOTHING -->
+            <FrameLayout
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/circle_background">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="CLOTHING"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+            </FrameLayout>
+
+            <!-- OTHER -->
+            <FrameLayout
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/circle_background">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="OTHER"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+            </FrameLayout>
+
+        </GridLayout>
+
+    </LinearLayout>
+
+</ScrollView>
